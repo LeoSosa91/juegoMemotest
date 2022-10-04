@@ -3,7 +3,7 @@ let selecciones = []
 
 generarTablero()
 
-function cargarIconos() {
+/* function cargarIconos() {
     // iconos = [
     //     '<i class="fas fa-star"></i>',
     //     '<i class="far fa-star"></i>',
@@ -19,37 +19,68 @@ function cargarIconos() {
     //     '<i class="fas fa-dice-d20"></i>',
     // ]
     iconos = [
-        '<img src="assent/images/almeja.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/caracol1.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/caracol2.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/caracol3.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/centolla.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/cholga.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/escrofalo.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/langostino.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/lechugaDeMar.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/luche.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/mejillon.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/merluzaComun.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/pejerrey.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/pezGalloOElefante.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/pezSapo.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/pulpoColorado.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/robalo.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/salmon.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/sombrerito.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
-        '<img src="assent/images/wakame.jpeg" class="img-fluid d-block mx-auto my-auto"  alt="...">',
+        '<img src="assent/images/almeja.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/caracol1.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/caracol2.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/caracol3.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/centolla.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/cholga.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/escrofalo.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/langostino.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/lechugaDeMar.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/luche.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/mejillon.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/merluzaComun.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/pejerrey.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/pezGalloOElefante.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/pezSapo.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/pulpoColorado.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/robalo.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/salmon.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/sombrerito.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/wakame.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
     ]
+} */
+
+function cargarIconos() {
+    iconos = [
+        '<img src="assent/images/almeja.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/caracol1.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/caracol2.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/caracol3.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/centolla.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/cholga.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/escrofalo.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/langostino.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/lechugaDeMar.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/luche.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/mejillon.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/merluzaComun.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/pejerrey.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/pezGalloOElefante.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/pezSapo.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/pulpoColorado.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/robalo.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/salmon.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/sombrerito.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/wakame.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+    ]
+    let comienzo = Math.floor(Math.random()*8);   //al azar 1 numero entre 1 y 8 para no pasarse de la long del arreglo
+    for (let i = comienzo; i < comienzo + 12; i++) { // a partir de ese comienzo, se eliminan 12 elementos, los restantes son 8
+        iconos.splice(i, 1)
+    }
+    //iconos ahora tiene 8 elementos al azar para mostrar
 }
+
 
 function generarTablero() {
     cargarIconos()
     selecciones = []
     let tablero = document.getElementById("tablero")
     let tarjetas = []
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 16; i++) {
         tarjetas.push(`
-                <div class="area-tarjeta" onclick="seleccionarTarjeta(${i})">
+                <div class="area-tarjeta" id="area-tarjeta" onclick="seleccionarTarjeta(${i})">
                     <div class="tarjeta" id="tarjeta${i}">
                         <div class="cara trasera" id="trasera${i}">
                             ${iconos[0]}
@@ -85,6 +116,7 @@ function seleccionarTarjeta(i) {
 
 function deseleccionar(selecciones) {
     setTimeout(() => {
+        //let areaTarjeta = document.getElementById("area-tarjeta")
         let trasera1 = document.getElementById("trasera" + selecciones[0])
         let trasera2 = document.getElementById("trasera" + selecciones[1])
         if (trasera1.innerHTML != trasera2.innerHTML) {
@@ -106,5 +138,6 @@ function deseleccionar(selecciones) {
         // modalMensaje.addEventListener('shown.bs.modal', event => {
         //     // do something...
         // })
-    }, 3000);
+    }, 200);
+
 }
