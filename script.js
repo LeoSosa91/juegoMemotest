@@ -43,32 +43,36 @@ generarTablero()
 } */
 
 function cargarIconos() {
-    iconos = [
+    iconos1 = [
         '<img src="assent/images/almeja.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/sombrerito.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/mejillon.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/cholga.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
         '<img src="assent/images/caracol1.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
         '<img src="assent/images/caracol2.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
         '<img src="assent/images/caracol3.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/pulpoColorado.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
         '<img src="assent/images/centolla.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
-        '<img src="assent/images/cholga.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
-        '<img src="assent/images/escrofalo.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
         '<img src="assent/images/langostino.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
-        '<img src="assent/images/lechugaDeMar.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
-        '<img src="assent/images/luche.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
-        '<img src="assent/images/mejillon.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+    ]
+    iconos2 = [
         '<img src="assent/images/merluzaComun.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
         '<img src="assent/images/pejerrey.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
         '<img src="assent/images/pezGalloOElefante.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
         '<img src="assent/images/pezSapo.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
-        '<img src="assent/images/pulpoColorado.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
         '<img src="assent/images/robalo.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
         '<img src="assent/images/salmon.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
-        '<img src="assent/images/sombrerito.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
         '<img src="assent/images/wakame.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/lechugaDeMar.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/escrofalo.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
+        '<img src="assent/images/luche.jpeg" class="img-fluid d-block mx-auto my-auto imagen"  alt="...">',
     ]
-    let comienzo = Math.floor(Math.random()*8);   //al azar 1 numero entre 1 y 8 para no pasarse de la long del arreglo
-    for (let i = comienzo; i < comienzo + 12; i++) { // a partir de ese comienzo, se eliminan 12 elementos, los restantes son 8
-        iconos.splice(i, 1)
-    }
+    random = Math.random() - 0.5
+    if (random > 0) {
+        iconos = iconos1
+    } else {
+        iconos = iconos2
+    }   
     //iconos ahora tiene 8 elementos al azar para mostrar
 }
 
@@ -78,7 +82,7 @@ function generarTablero() {
     selecciones = []
     let tablero = document.getElementById("tablero")
     let tarjetas = []
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 20; i++) {
         tarjetas.push(`
                 <div class="area-tarjeta" id="area-tarjeta" onclick="seleccionarTarjeta(${i})">
                     <div class="tarjeta" id="tarjeta${i}">
