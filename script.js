@@ -1,6 +1,7 @@
 var iconos = []
 var selecciones = []
 var tarjetas = []
+var aciertos = 0
 
 generarTablero()
 
@@ -222,6 +223,14 @@ function obtenerTarjetas() {
     return tarjetas
 }
 
+function obtenerAciertos() {
+    return aciertos
+}
+
+function setAciertos(x) {
+    aciertos = x
+}
+
 function seleccionarTarjeta(i) {
     var areaTarjeta;
     var id = "area-tarjeta"
@@ -277,16 +286,8 @@ function deseleccionar(selecciones) {
             myModal.show(modalToggle);
             modalToggle.querySelector(".modal-title").innerHTML = obtenerTitulo(selecciones[0])
             modalToggle.querySelector(".modal-body").innerHTML = obtenerTexto(selecciones[0])
+            aciertos++
 
-            /*             if (selecciones[0] > 4) {
-                            if (selecciones[0] % 2 == 0) {
-                                modalToggle.querySelector(".modal-body").innerHTML = descripciones[selecciones[0]/2]
-                            } else {
-                                modalToggle.querySelector(".modal-body").innerHTML = descripciones[selecciones[1]/2]
-                            }
-                        } else {
-                            modalToggle.querySelector(".modal-body").innerHTML = descripciones[selecciones[0]]
-                        } */
             //document.getElementById('modalMensaje').modal({ show:true })
         }
         // const modalMensaje = document.getElementById('modalMensaje')
@@ -312,6 +313,15 @@ function obtenerTitulo(seleccion) {
     return resultado
 }
 
+function mostrarModalGanar() {
+    if (aciertos == 5) {
+        const myModal2 = new bootstrap.Modal('#modalMensaje2', {
+            keyboard: false
+        })
+        const modalToggle2 = document.getElementById('modalMensaje2');
+        myModal2.show(modalToggle2);
+    }
+}
 
 function obtenerTexto(seleccion) {
     let doc;

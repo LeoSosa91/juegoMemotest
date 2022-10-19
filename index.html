@@ -17,7 +17,7 @@
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand titulo-juego" href="#">Juego MemoTest</a>
+                <a class="navbar-brand titulo-juego" href="#" onclick="location.reload()">Juego MemoTest</a>
                 <h4 class="navbar-brand titulo-categoria" id="titulo-categoria"></h4>
             </div>
         </nav>
@@ -39,7 +39,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">¡Haz acertado!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="mostrarModalGanar()"></button>
                 </div>
                 <div class="modal-body">
                     ¡Haz acertado!
@@ -47,6 +47,24 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="modalMensaje2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel2">¡Haz ganado!</h5>
+                <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+            </div>
+            <div class="modal-body">
+                ¡Felicitaciones, has llegado hasta el final!
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-primary" href="#" onclick="location.reload()">Jugar de nuevo</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <footer class="footer mt-auto py-3 bg-light w-100">
