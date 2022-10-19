@@ -207,13 +207,11 @@ function generarTablero() {
             iconos.splice(0, 1)
         }   // para que luego de agregar dos veces un elemento, este se quite de la lista y se continue con los demas
     }
-    let random = Math.random() - 0.5;
-    tarjetas.sort(() => random)
+    tarjetas.sort(() => Math.random() - 0.5)
     tarjetas.forEach(tarjeta => {
         tablero.innerHTML = tablero.innerHTML + tarjeta['div']
     });
     setTarjetas(tarjetas)
-    console.log(tarjetas)
 }
 
 function setTarjetas(x) {
@@ -277,8 +275,6 @@ function deseleccionar(selecciones) {
             })
             const modalToggle = document.getElementById('modalMensaje');
             myModal.show(modalToggle);
-            doc = new DOMParser().parseFromString(tarjetas[0]['div'].trim(), "text/xml")
-            console.log(doc.firstChild.id.toString().replace( /^\D+/g, ''));
             modalToggle.querySelector(".modal-title").innerHTML = obtenerTitulo(selecciones[0])
             modalToggle.querySelector(".modal-body").innerHTML = obtenerTexto(selecciones[0])
 
@@ -309,8 +305,6 @@ function obtenerTitulo(seleccion) {
     obtenerTarjetas().forEach(tarjeta => {
         doc = new DOMParser().parseFromString(tarjeta['div'].trim(), "text/xml")
         id = doc.firstChild.id.toString().replace( /^\D+/g, '')
-        console.log(seleccion)
-        console.log(id)
         if (seleccion == id) {
             resultado = tarjeta['titulo']
         }
