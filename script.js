@@ -1,3 +1,16 @@
+const audioSeleccionar = new Audio("assent/audios/blackjack_1.mp3");
+const audioDeseleccionar = new Audio("assent/audios/naipe.mp3");
+const audioBarajar = new Audio("assent/audios/todos.mp3");
+const aud1 = new Audio("assent/audios/1.mp3");
+const aud2 = new Audio("assent/audios/2.mp3");
+const aud3 = new Audio("assent/audios/3.mp3");
+const aud4 = new Audio("assent/audios/4.mp3");
+const aud5 = new Audio("assent/audios/5.mp3");
+const aud6 = new Audio("assent/audios/6.mp3");
+const aud7 = new Audio("assent/audios/7.mp3");
+const aud8 = new Audio("assent/audios/8.mp3");
+const aud9 = new Audio("assent/audios/9.mp3");
+
 var iconos = []
 var selecciones = []
 var tarjetas = []
@@ -187,9 +200,10 @@ function generarTablero() {
     selecciones = []
     let tablero = document.getElementById("tablero")
     let tarjetas = []
- // hay q ver como utilizar iconos o en este caso va a tener q ser tarjetas que contenga jsons con divs, titulos y txt
+    // hay q ver como utilizar iconos o en este caso va a tener q ser tarjetas que contenga jsons con divs, titulos y txt
     for (let i = 0; i < 10; i++) {
-        tarjetas.push({'div': `
+        tarjetas.push({
+            'div': `
                 <div class="area-tarjeta" id="area-tarjeta${i}" onclick="seleccionarTarjeta(${i})">
                     <div class="tarjeta" id="tarjeta${i}">
                         <div class="cara trasera" id="trasera${i}">
@@ -201,9 +215,9 @@ function generarTablero() {
                     </div>
                 </div>        
                 `,
-                'titulo': iconos[0]['titulo'],
-                'texto': iconos[0]['texto'],
-            })
+            'titulo': iconos[0]['titulo'],
+            'texto': iconos[0]['texto'],
+        })
         if (i % 2 == 1) {  // por cada iteracion le quita el primer elemento a iconos, es decir, el iconos[0] es removido.
             iconos.splice(0, 1)
         }   // para que luego de agregar dos veces un elemento, este se quite de la lista y se continue con los demas
@@ -213,6 +227,14 @@ function generarTablero() {
         tablero.innerHTML = tablero.innerHTML + tarjeta['div']
     });
     setTarjetas(tarjetas)
+
+    
+    // El usuario debe interactuar con la pantalla antes de poder reproducir cualquier sonido.
+
+/*     setTimeout(() => {
+        audioBarajar.play();
+    }, 500); */
+
 }
 
 function setTarjetas(x) {
@@ -231,6 +253,10 @@ function setAciertos(x) {
     aciertos = x
 }
 
+
+
+
+
 function seleccionarTarjeta(i) {
     var areaTarjeta;
     var id = "area-tarjeta"
@@ -246,6 +272,7 @@ function seleccionarTarjeta(i) {
         if (tarjeta.style.transform != "rotateY(180deg)") {
             tarjeta.style.transform = "rotateY(180deg)"
             selecciones.push(i)
+            audioSeleccionar.play();
         }
     }
     if (selecciones.length == 2) {
@@ -263,11 +290,11 @@ function seleccionarTarjeta(i) {
             areaTarjeta = document.getElementById(id)
             areaTarjeta.classList.remove('inactive')
         }
+
     }
 }
 
 function deseleccionar(selecciones) {
-
     setTimeout(() => {
         let trasera1 = document.getElementById("trasera" + selecciones[0])
         let trasera2 = document.getElementById("trasera" + selecciones[1])
@@ -276,7 +303,9 @@ function deseleccionar(selecciones) {
             let tarjeta2 = document.getElementById("tarjeta" + selecciones[1])
             tarjeta1.style.transform = "rotateY(0deg)"
             tarjeta2.style.transform = "rotateY(0deg)"
+            audioDeseleccionar.play();
         } else {
+            aciertos++
             trasera1.style.background = "green"
             trasera2.style.background = "green"
             const myModal = new bootstrap.Modal('#modalMensaje', {
@@ -284,9 +313,24 @@ function deseleccionar(selecciones) {
             })
             const modalToggle = document.getElementById('modalMensaje');
             myModal.show(modalToggle);
+            if (aciertos == 1) {
+                aud5.play();
+            }
+            if (aciertos == 2) {
+                aud6.play();
+            }
+            if (aciertos == 3) {
+                aud7.play();
+            }
+            if (aciertos == 4) {
+                aud8.play();
+            }
+            if (aciertos == 5) {
+                aud9.play();
+            }
             modalToggle.querySelector(".modal-title").innerHTML = obtenerTitulo(selecciones[0])
             modalToggle.querySelector(".modal-body").innerHTML = obtenerTexto(selecciones[0])
-            aciertos++
+
 
             //document.getElementById('modalMensaje').modal({ show:true })
         }
@@ -297,6 +341,8 @@ function deseleccionar(selecciones) {
     }, 500);
 
 
+    audioSeleccionar.play();
+
 }
 
 function obtenerTitulo(seleccion) {
@@ -305,7 +351,7 @@ function obtenerTitulo(seleccion) {
     let resultado;
     obtenerTarjetas().forEach(tarjeta => {
         doc = new DOMParser().parseFromString(tarjeta['div'].trim(), "text/xml")
-        id = doc.firstChild.id.toString().replace( /^\D+/g, '')
+        id = doc.firstChild.id.toString().replace(/^\D+/g, '')
         if (seleccion == id) {
             resultado = tarjeta['titulo']
         }
@@ -314,6 +360,7 @@ function obtenerTitulo(seleccion) {
 }
 
 function mostrarModalGanar() {
+
     if (aciertos == 5) {
         const myModal2 = new bootstrap.Modal('#modalMensaje2', {
             keyboard: false
@@ -329,7 +376,7 @@ function obtenerTexto(seleccion) {
     let resultado;
     obtenerTarjetas().forEach(tarjeta => {
         doc = new DOMParser().parseFromString(tarjeta['div'].trim(), "text/xml")
-        id = doc.firstChild.id.toString().replace( /^\D+/g, '')
+        id = doc.firstChild.id.toString().replace(/^\D+/g, '')
         if (seleccion == id) {
             resultado = tarjeta['texto']
         }
