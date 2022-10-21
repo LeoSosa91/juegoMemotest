@@ -330,7 +330,7 @@ function deseleccionar(selecciones) {
             }
             modalToggle.querySelector(".modal-title").innerHTML = obtenerTitulo(selecciones[0])
             modalToggle.querySelector(".modal-body").innerHTML = obtenerTexto(selecciones[0])
-
+            
 
             //document.getElementById('modalMensaje').modal({ show:true })
         }
@@ -338,12 +338,17 @@ function deseleccionar(selecciones) {
         // modalMensaje.addEventListener('shown.bs.modal', event => {
         //     // do something...
         // })
-    }, 500);
+    }, 1000);
 
 
     audioSeleccionar.play();
 
 }
+
+/* function obtenerImagen(seleccion) {
+    let cards = obtenerTarjetas();    
+    return cards[seleccion]['div'].trim();
+} */
 
 function obtenerTitulo(seleccion) {
     let doc;
