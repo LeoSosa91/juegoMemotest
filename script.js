@@ -338,7 +338,7 @@ function deseleccionar(selecciones) {
         // modalMensaje.addEventListener('shown.bs.modal', event => {
         //     // do something...
         // })
-    }, 1000);
+    }, 1200);
 
 
     audioSeleccionar.play();
